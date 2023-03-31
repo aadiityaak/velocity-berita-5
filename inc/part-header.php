@@ -3,8 +3,7 @@
     <h2 id="main-nav-label" class="screen-reader-text">
         <?php esc_html_e('Main Navigation', 'justg'); ?>
     </h2>
-
-    <div class="head-part-top bg-color-theme">
+    <div class="head-part-top bg-transparent">
         <div class="row align-items-start">
             <div class="col-md-5 col-xl-4">
                 <div class="py-2 px-3">
@@ -12,57 +11,7 @@
                 </div>
             </div>
             <div class="col-md d-none d-md-block">
-                <div class="datenow text-end">
-                    <small class="bg-light px-2 py-1 d-inline-block position-relative">
-                        <?php echo date('l jS F Y', current_time('timestamp', 0)); ?>
-                    </small>
-                </div>
-                <div class="ticker-news text-end text-white p-2">
-                    <?php
-                    // The Query
-                    $args = array(
-                        'post_type'     => 'post',
-                        'posts_per_page' => 5
-                    );
-                    $the_query = new WP_Query($args);
-
-                    // The Loop
-                    $nm = 1;
-                    if ($the_query->have_posts()) {
-                        echo '<div id="carouselTickerNews" class="carousel slide carousel-fade" data-bs-ride="carousel">';
-                        echo '<div class="carousel-inner">';
-                        while ($the_query->have_posts()) {
-                            $the_query->the_post();
-                            if (get_the_title()) {
-                                echo '<div class="carousel-item' . ($nm == 1 ? ' active' : '') . '">';
-                                echo '<a class="text-white" href="' . get_the_permalink() . '" title="' . get_the_title() . '">' . vdberita_limit_text(get_the_title(), 6) . '</a>';
-                                echo '</div>';
-                            }
-                            $nm++;
-                        }
-                        echo '</div>';
-                        echo '</div>';
-                    }
-                    /* Restore original Post Data */
-                    wp_reset_postdata();
-                    ?>
-                </div>
-                <div class="secondary-menu position-relative bg-secondary">
-                    <?php
-                    wp_nav_menu(
-                        array(
-                            'theme_location'  => 'secondary',
-                            'container_class' => 'secondary-menu-body',
-                            'container_id'    => '',
-                            'menu_class'      => 'navbar-nav navbar-dark justify-content-start flex-grow-1 px-2',
-                            'fallback_cb'     => '',
-                            'menu_id'         => 'secondary-menu',
-                            'depth'           => 1,
-                            'walker'          => new justg_WP_Bootstrap_Navwalker(),
-                        )
-                    );
-                    ?>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -98,12 +47,7 @@
             </div><!-- .offcanvas -->
         </div>
         <div class="search-header">
-            <form action="" method="get" class="d-flex overflow-hidden border border-dark my-1 bg-light">
-                <input type="text" name="s" placeholder="Search" style="max-width: 7rem;" class="form-control-sm bg-light border-0 rounded-0">
-                <button type="submit" class="btn btn-link text-secondary py-1 px-2">
-                    <i class="fa fa-search"></i>
-                </button>
-            </form>
+
         </div>
     </div>
 

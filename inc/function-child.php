@@ -277,6 +277,11 @@ function justg_header_berita()
 {
 	require_once(get_stylesheet_directory() . '/inc/part-header.php');
 }
+add_action('justg_before_header', 'justg_top_header_berita');
+function justg_top_header_berita()
+{
+	require_once(get_stylesheet_directory() . '/inc/part-top-header.php');
+}
 add_action('justg_do_footer', 'justg_footer_berita');
 function justg_footer_berita()
 {
