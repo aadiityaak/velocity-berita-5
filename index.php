@@ -85,7 +85,6 @@ $container = velocitytheme_option('justg_container_type', 'container');
                     <div class="part-home-2">
                         <div class="row">
                             <div class="col-md-5">
-                                <?php get_berita_iklan('iklan_home_2'); ?>
                                 <?php
                                 $post3_title    = velocitytheme_option('title_posts_home_3', 'Recent Posts');
                                 $post3_cat      = velocitytheme_option('cat_posts_home_3');
@@ -113,6 +112,10 @@ $container = velocitytheme_option('justg_container_type', 'container');
                                     </div>
                                 </div>
 
+                                <div class="mb-3">
+                                    <?php get_berita_iklan('iklan_home_2'); ?>
+                                </div>
+                                
                                 <?php
                                 $post5_title    = velocitytheme_option('title_posts_home_5', 'Recent Posts');
                                 $post5_cat      = velocitytheme_option('cat_posts_home_5');
@@ -187,94 +190,106 @@ $container = velocitytheme_option('justg_container_type', 'container');
 
         <div class="row widget home-bottom">
             <div class="col-md-4">
-                <div class="post-home-footer part-post-home-3">
+                <div class="post-home-footer  part_posts_home_footer_1">
+                    <?php
+                    $postf1_title    = velocitytheme_option('title_posts_home_footer_1', 'Recent Posts');
+                    $postf1_cat      = velocitytheme_option('cat_posts_home_footer_1');
+                    ?>
                     <h3 class="widget-title p-0 d-flex align-items-center justify-content-between mb-0">
-                        <span class="p-2"><?php echo $post3_title; ?></span>
-                        <?php if ($post3_cat && $post3_cat !== 'disable') : ?>
-                            <a class="btn btn-warning btn-sm shadow py-0 px-1 me-2" href="<?php echo get_tag_link($post3_cat); ?>">
+                        <span class="p-2"><?php echo $postf1_title; ?></span>
+                        <?php if ($postf1_cat && $postf1_cat !== 'disable') : ?>
+                            <a class="btn btn-warning btn-sm shadow py-0 px-1 me-2" href="<?php echo get_tag_link($postf1_cat); ?>">
                                 <i class="fa fa-rss"></i>
                             </a>
                         <?php endif; ?>
                     </h3>
-                    <div class="col-post p-3">
+                    <div class="col-post p-3 part_cat_posts_home_footer_1">
                         <?php
-                        $post3_args = array(
+                        $postf1_args = array(
                             'post_type' => 'post',
-                            'cat'       => $post3_cat,
+                            'cat'       => $postf1_cat,
                             'posts_per_page' => 1,
                         );
-                        module_vdposts($post3_args, 'posts-head-footer');
+                        module_vdposts($postf1_args, 'posts-head-footer');
                         ?>
                         <?php
-                        $post3_args = array(
+                        $postf1_args = array(
                             'post_type' => 'post',
-                            'cat'       => $post3_cat,
+                            'cat'       => $postf1_cat,
                             'posts_per_page' => 2,
                             'offset' => 1
                         );
-                        module_vdposts($post3_args, '');
+                        module_vdposts($postf1_args, '');
                         ?>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="post-home-footer part-post-home-3">
+                <div class="post-home-footer  part_posts_home_footer_2">
+                    <?php
+                    $postf2_title    = velocitytheme_option('title_posts_home_footer_2', 'Recent Posts');
+                    $postf2_cat      = velocitytheme_option('cat_posts_home_footer_2');
+                    ?>
                     <h3 class="widget-title p-0 d-flex align-items-center justify-content-between mb-0">
-                        <span class="p-2"><?php echo $post3_title; ?></span>
-                        <?php if ($post3_cat && $post3_cat !== 'disable') : ?>
-                            <a class="btn btn-warning btn-sm shadow py-0 px-1 me-2" href="<?php echo get_tag_link($post3_cat); ?>">
+                        <span class="p-2"><?php echo $postf2_title; ?></span>
+                        <?php if ($postf2_cat && $postf2_cat !== 'disable') : ?>
+                            <a class="btn btn-warning btn-sm shadow py-0 px-1 me-2" href="<?php echo get_tag_link($postf2_cat); ?>">
                                 <i class="fa fa-rss"></i>
                             </a>
                         <?php endif; ?>
                     </h3>
-                    <div class="col-post p-3">
+                    <div class="col-post p-3 part_cat_posts_home_footer_2">
                         <?php
-                        $post3_args = array(
+                        $postf2_args = array(
                             'post_type' => 'post',
-                            'cat'       => $post3_cat,
+                            'cat'       => $postf2_cat,
                             'posts_per_page' => 1,
                         );
-                        module_vdposts($post3_args, 'posts-head-footer');
+                        module_vdposts($postf2_args, 'posts-head-footer');
                         ?>
                         <?php
-                        $post3_args = array(
+                        $postf2_args = array(
                             'post_type' => 'post',
-                            'cat'       => $post3_cat,
+                            'cat'       => $postf2_cat,
                             'posts_per_page' => 2,
                             'offset' => 1
                         );
-                        module_vdposts($post3_args, '');
+                        module_vdposts($postf2_args, '');
                         ?>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="post-home-footer part-post-home-3">
+                <div class="post-home-footer  part_posts_home_footer_3">
+                    <?php
+                    $postf3_title    = velocitytheme_option('title_posts_home_footer_3', 'Recent Posts');
+                    $postf3_cat      = velocitytheme_option('cat_posts_home_footer_3');
+                    ?>
                     <h3 class="widget-title p-0 d-flex align-items-center justify-content-between mb-0">
-                        <span class="p-2"><?php echo $post3_title; ?></span>
-                        <?php if ($post3_cat && $post3_cat !== 'disable') : ?>
-                            <a class="btn btn-warning btn-sm shadow py-0 px-1 me-2" href="<?php echo get_tag_link($post3_cat); ?>">
+                        <span class="p-2"><?php echo $postf3_title; ?></span>
+                        <?php if ($postf3_cat && $postf3_cat !== 'disable') : ?>
+                            <a class="btn btn-warning btn-sm shadow py-0 px-1 me-2" href="<?php echo get_tag_link($postf3_cat); ?>">
                                 <i class="fa fa-rss"></i>
                             </a>
                         <?php endif; ?>
                     </h3>
-                    <div class="col-post p-3">
+                    <div class="col-post p-3 part_cat_posts_home_footer_1">
                         <?php
-                        $post3_args = array(
+                        $postf3_args = array(
                             'post_type' => 'post',
-                            'cat'       => $post3_cat,
+                            'cat'       => $postf3_cat,
                             'posts_per_page' => 1,
                         );
-                        module_vdposts($post3_args, 'posts-head-footer');
+                        module_vdposts($postf3_args, 'posts-head-footer');
                         ?>
                         <?php
-                        $post3_args = array(
+                        $postf3_args = array(
                             'post_type' => 'post',
-                            'cat'       => $post3_cat,
+                            'cat'       => $postf1_cat,
                             'posts_per_page' => 2,
                             'offset' => 1
                         );
-                        module_vdposts($post3_args, '');
+                        module_vdposts($postf3_args, '');
                         ?>
                     </div>
                 </div>

@@ -180,11 +180,6 @@ function velocitychild_theme_setup()
 				'section'	=> 'section_homeberita',
 				'title'		=> 'Recent Posts',
 			],
-			'posts_home_2'  => [
-				'label'		=> 'Posts Home 2',
-				'section'	=> 'section_homeberita',
-				'title'		=> 'Recent Posts',
-			],
 			'posts_home_3'  => [
 				'label'		=> 'Posts Home 3',
 				'section'	=> 'section_homeberita',
@@ -197,6 +192,21 @@ function velocitychild_theme_setup()
 			],
 			'posts_home_5'  => [
 				'label'		=> 'Posts Home 5',
+				'section'	=> 'section_homeberita',
+				'title'		=> 'Recent Posts',
+			],
+			'posts_home_footer_1'  => [
+				'label'		=> 'Posts Home Footer 1',
+				'section'	=> 'section_homeberita',
+				'title'		=> 'Recent Posts',
+			],
+			'posts_home_footer_2'  => [
+				'label'		=> 'Posts Home Footer 2',
+				'section'	=> 'section_homeberita',
+				'title'		=> 'Recent Posts',
+			],
+			'posts_home_footer_3'  => [
+				'label'		=> 'Posts Home Footer 3',
 				'section'	=> 'section_homeberita',
 				'title'		=> 'Recent Posts',
 			],
