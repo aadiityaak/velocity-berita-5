@@ -24,8 +24,8 @@
                         while ($the_query->have_posts()) {
                             $the_query->the_post();
                             if (get_the_title()) {
-                                echo '<div class="carousel-item' . ($nm == 1 ? ' active' : '') . '">';
-                                echo '<a href="' . get_the_permalink() . '" title="' . get_the_title() . '">' . vdberita_limit_text(get_the_title(), 6) . '</a>';
+                                echo '<div class="carousel-item text-truncate' . ($nm == 1 ? ' active' : '') . '">';
+                                echo '<a href="' . get_the_permalink() . '" title="' . get_the_title() . '">' . get_the_title(). '</a>';
                                 echo '</div>';
                             }
                             $nm++;

@@ -74,7 +74,7 @@ function module_vdposts($args = null, $style = null)
                     break;
                 case 'carousel':
                 ?>
-                    <div class="carousel-post-item px-3">
+                    <div class="carousel-post-item px-2">
                         <div class="card p-2 border-secondary-subtle shadow-sm bg-light">
                             <div class="row">
                                 <div class="col-4">
@@ -99,6 +99,17 @@ function module_vdposts($args = null, $style = null)
                     </div>
                 <?php
                     break;
+                case 'image':
+                    ?>
+                        <div class="ratio ratio-1x1 bg-light mb-2">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <a href="<?php echo get_the_permalink(); ?>">
+                                    <img src="<?php echo wp_get_attachment_thumb_url(get_post_thumbnail_id()); ?>" alt="" loading="lazy">
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    <?php
+                break;
                 case 'posts3':
                 ?>
                     <div class="posts-item border-bottom pb-1 mb-2">
@@ -119,7 +130,7 @@ function module_vdposts($args = null, $style = null)
                                 <a class="fw-bold" href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                                     <?php echo vdberita_limit_text(get_the_title(), 8); ?>
                                 </a>
-                                <div class="post-excerpt text-muted">
+                                <div class="post-excerpt">
                                     <small>
                                         <?php echo vdberita_limit_text(strip_tags(get_the_content()), 5); ?>
                                     </small>
@@ -129,7 +140,32 @@ function module_vdposts($args = null, $style = null)
                     </div>
                 <?php
                     break;
-                case 'posts4':
+                    case 'posts-head-footer':
+                        ?>
+                            <div class="posts-item border-bottom pb-1 mb-2">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="ratio ratio-1x1 bg-light border border-4">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <a href="<?php echo get_the_permalink(); ?>">
+                                                    <img src="<?php echo wp_get_attachment_thumb_url(get_post_thumbnail_id()); ?>" alt="" loading="lazy">
+                                                </a>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 ps-0">
+                                        <div class="post-date">
+                                            <small> <?php echo get_the_date(); ?> / <?php echo justg_get_hit(); ?> views </small>
+                                        </div>
+                                        <a class="fw-bold" href="<?php echo get_the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
+                                            <?php echo vdberita_limit_text(get_the_title(), 8); ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                    break;
+                    case 'posts4':
                     echo '<a class="d-flex w-100 border-bottom pb-1 mb-1" href="' . get_the_permalink() . '">';
                     echo '<i class="fa fa-file-text-o mt-1 me-2"></i>';
                     echo '<span>' . get_the_title() . '</span>';
@@ -149,7 +185,26 @@ function module_vdposts($args = null, $style = null)
                     </div>
                 <?php
                     break;
-                case 'homespecial':
+                    case 'title-half':
+                        echo '<a class="d-inline-block pb-1 mb-1" style="width:49%;" href="' . get_the_permalink() . '">';
+                        echo '<span>' . get_the_title() . '</span>';
+                        echo '</a>';
+                    ?>
+                    <?php
+                    break;
+                    case 'heading':
+                        echo '<h3><a class="d-flex w-100 pb-1 mb-1" href="' . get_the_permalink() . '">';
+                        echo '<span>' . get_the_title() . '</span>';
+                        echo '</a></h3>';
+                        echo '<div class="post-excerpt">';
+                        echo '<small>';
+                                echo vdberita_limit_text(strip_tags(get_the_content()), 25);
+                                echo '</small>';
+                                echo '</div>';
+                    ?>
+                    <?php
+                    break;
+                    case 'homespecial':
                 ?>
                     <div class="posts-item bg-white p-2 shadow mb-2 position-relative">
                         <span class="position-absolute z-1 top-0 start-0 translate-middle-y">

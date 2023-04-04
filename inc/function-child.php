@@ -54,6 +54,10 @@ function velocitychild_theme_setup()
 			'priority' => 10,
 		]);
 		$fieldiklan = [
+			'iklan_header_1'  => [
+				'label'			=> 'Iklan Header',
+				'description'	=> 'Iklan Header 310x350',
+			],
 			'iklan_home_1'  => [
 				'label'			=> 'Iklan Home 1',
 				'description'	=> 'Iklan Halaman Depan 310x350',
@@ -294,7 +298,7 @@ function get_berita_iklan($idiklan)
 	echo '<div class="part_' . $idiklan . '">';
 	if ($iklan_content) {
 		$linkiklan = velocitytheme_option('link_' . $idiklan, '');
-		echo '<div class="mb-3 text-center">';
+		echo '<div class="text-center">';
 		echo $linkiklan ? '<a href="' . $linkiklan . '" target="_blank">' : '';
 		echo '<img class="img-fluid" src="' . $iklan_content . '" loading="lazy">';
 		echo $linkiklan ? '</a>' : '';

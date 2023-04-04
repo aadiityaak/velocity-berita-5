@@ -5,47 +5,6 @@ $post2_title    = velocitytheme_option('title_posts_sidebar_2', 'Recent Posts');
 $post2_cat      = velocitytheme_option('cat_posts_sidebar_2');
 $post2_sort     = velocitytheme_option('sortby_posts_sidebar_2');
 ?>
-<aside id="iklan-sidebar" class="widget widget_berita_iklan">
-    <?php get_berita_iklan('iklan_sidebar'); ?>
-</aside>
-
-<?php if ($post1_cat !== 'disable') : ?>
-    <aside id="sidebar-post-berita1" class="widget widget_berita_posts part_posts_sidebar_1">
-        <h3 class="widget-title">
-            <span><?php echo $post1_title; ?></span>
-        </h3>
-        <?php
-        $post1_args = array(
-            'post_type' => 'post',
-            'cat'       => $post1_cat,
-            'posts_per_page' => 5,
-        );
-        module_vdposts($post1_args, 'posts4');
-        ?>
-    </aside>
-<?php endif; ?>
-
-<aside id="iklan-sidebar2" class="widget widget_berita_iklan">
-    <?php get_berita_iklan('iklan_sidebar_2'); ?>
-</aside>
-
-<?php if ($post2_cat !== 'disable') : ?>
-    <aside id="sidebar-post-berita2" class="widget widget_berita_posts part_posts_sidebar_2">
-        <h3 class="widget-title">
-            <span><?php echo $post2_title; ?></span>
-        </h3>
-        <?php
-        $post2_args = array(
-            'post_type'         => 'post',
-            'cat'               => $post2_cat,
-            'posts_per_page'    => 5,
-            'sortby'            => $post2_sort
-        );
-        module_vdposts($post2_args, 'posts3');
-        ?>
-    </aside>
-<?php endif; ?>
-
 <aside id="sidebar-post-tabs" class="widget widget_berita_tabs">
     <ul class="nav nav-tabs p-0" id="beritaTabs" role="tablist">
         <li class="nav-item" role="presentation">
@@ -157,3 +116,49 @@ $post2_sort     = velocitytheme_option('sortby_posts_sidebar_2');
         </div>
     </div>
 </aside>
+
+<aside id="iklan-sidebar" class="widget widget_berita_iklan">
+    <?php get_berita_iklan('iklan_sidebar'); ?>
+</aside>
+
+<?php if ($post1_cat !== 'disable') : ?>
+    <aside id="sidebar-post-berita1" class="widget widget_berita_posts part_posts_sidebar_1">
+        <h3 class="widget-title">
+            <span><?php echo $post1_title; ?></span>
+        </h3>
+        <div class="px-2">
+            <?php
+            $post1_args = array(
+                'post_type' => 'post',
+                'cat'       => $post1_cat,
+                'posts_per_page' => 5,
+            );
+            module_vdposts($post1_args, 'posts4');
+            ?>
+        </div>
+
+    </aside>
+<?php endif; ?>
+
+<aside id="iklan-sidebar2" class="widget widget_berita_iklan">
+    <?php get_berita_iklan('iklan_sidebar_2'); ?>
+</aside>
+
+<?php if ($post2_cat !== 'disable') : ?>
+    <aside id="sidebar-post-berita2" class="widget widget_berita_posts part_posts_sidebar_2">
+        <h3 class="widget-title">
+            <span><?php echo $post2_title; ?></span>
+        </h3>
+        <div class="px-2">
+            <?php
+            $post2_args = array(
+                'post_type'         => 'post',
+                'cat'               => $post2_cat,
+                'posts_per_page'    => 5,
+                'sortby'            => $post2_sort
+            );
+            module_vdposts($post2_args, 'posts3');
+            ?>
+        </div>
+    </aside>
+<?php endif; ?>
